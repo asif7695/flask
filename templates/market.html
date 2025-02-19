@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}
+Market Page
+{% endblock %}
+
+{% block content %}
+      <h1>Hey there! Welcome to the <b>MARKET</b>.</h1>
+    <h2 align="center">Here are some items </h2>
+    <table class="table table-dark caption-top">
+  <caption>List of users</caption>
+  <thead>
+    <tr>
+      <th scope="col">Serial</th>
+      <th scope="col">Name</th>
+      <th scope="col">Barcode</th>
+      <th scope="col">Price</th>
+      <th scope="col">Option</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in item %}
+      <tr>
+        <th scope="row">{{ i.Serial }}</th>
+        <td>{{ i.Name }}</td>
+        <td>{{ i.Barcode }}</td>
+        <td>{{ i.Price }} $</td>
+        <td>
+          <button type="button" class="btn btn-outline-primary">Show more</button>
+          <button type="button" class="btn btn-outline-success">Purchase item</button>
+        </td>
+      </tr>
+
+
+    {% endfor %}
+
+
+  </tbody>
+</table>
+
+{% endblock %}
+
